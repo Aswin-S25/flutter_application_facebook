@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_facebook/sections/StorySession.dart';
 import 'package:flutter_application_facebook/sections/statusSection.dart';
 import 'package:flutter_application_facebook/widgets/headerButtonSession.dart';
 import './widgets/appBarButton.dart';
 import './sections/statusSection.dart';
 import './widgets/headerButtonSession.dart';
+import './sections/roomSession.dart';
+
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Widget thinDivider = Divider(thickness: 1, color: Colors.grey[300]);
+
+    Widget thickDivider =  Divider(
+              thickness: 10,
+              color: Colors.grey[300]
+             );
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Facebook",
@@ -25,33 +35,29 @@ class Home extends StatelessWidget {
             ),
           ),
           actions: [
-            AppBarButton(
+            CircularButton(
               buttonicon: Icons.search,
               buttonAction: (() {
-                print("pressed");
+                debugPrint("pressed");
               }),
             ),
-
-            AppBarButton(
+            CircularButton(
               buttonicon: Icons.chat,
               buttonAction: (() {
-                print("Messager appears");
+                debugPrint("Messager appears");
               }),
             )
           ],
         ),
         body: ListView(
           children: [
-             const StatusSession(),
-             Divider(
-              thickness: 1,
-              color: Colors.grey[300]
-             ),
-             const HeaderButtonSession(),
-             Divider(
-              color: Colors.grey[300],
-              thickness: 10,
-          ),
+            const StatusSession(),
+            thinDivider,
+            const HeaderButtonSession(),
+            thickDivider,
+            const RoomSession(),
+            thickDivider,
+           const StorySession(),
           ],
         ),
       ),

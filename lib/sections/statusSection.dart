@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_facebook/assets.dart';
+import 'package:flutter_application_facebook/widgets/avatar.dart';
 class StatusSession extends StatelessWidget {
   const StatusSession({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: ClipRRect(
-        borderRadius: BorderRadius.circular(300),
-        child: Image.asset(musk, fit: BoxFit.fill),
-      ),
+      leading: Avater(image: zucker, statusdisplay: true),
       title: const TextField(
         decoration: InputDecoration(
           hintText: "what's on your mind",

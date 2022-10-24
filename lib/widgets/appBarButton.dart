@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class AppBarButton extends StatelessWidget {
+class CircularButton extends StatelessWidget {
 
   final IconData buttonicon;
   final void Function() buttonAction;
-  const AppBarButton({super.key, required this.buttonicon,  required this.buttonAction});
+  const CircularButton({super.key, required this.buttonicon,  required this.buttonAction});
 
   @override
   Widget build(BuildContext context) {
