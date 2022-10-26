@@ -12,9 +12,12 @@ class StorySession extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
-           StoryCard(image: zucker),
-           StoryCard(image: musk),
-           StoryCard(image: sunder)
+           StoryCard(avatar: zucker, image: zucker, labelText: "Add your Story", createStoryStatus: true),
+           StoryCard(avatar: musk, image: musk_post, labelText: "Elon Musk"),
+           StoryCard(avatar: sunder, image: sundar_post, labelText: "Sunder Pichai"),
+           StoryCard(avatar: bill, image: bill_post, labelText: "Bill Gate"),
+          //  StoryCard(avatar: warren, image: warren_post, labelText: "Warren")
+
         ],
       ),
     );

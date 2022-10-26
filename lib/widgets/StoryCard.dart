@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_facebook/widgets/appBarButton.dart';
+import 'package:flutter_application_facebook/widgets/avatar.dart';
 // import 'package:flutter_application_facebook/assets.dart';
 // import 'package:flutter_application_facebook/widgets/avatar.dart';
 
 class StoryCard extends StatelessWidget {
-  const StoryCard({super.key, required this.image, required this.labelText, this.createStoryStatus = false});
+  const StoryCard({super.key,required this.avatar, required this.image, required this.labelText, this.createStoryStatus = false});
   final String image;
+  final String avatar;
   final String labelText;
   final bool createStoryStatus;
   @override
@@ -23,20 +25,22 @@ class StoryCard extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            left: 5,
-            top: 5,
-            child: CircularButton(
+            left: -5,
+            top: -5,
+            child:createStoryStatus ? CircularButton(
                 buttonicon: Icons.add,
                 buttoncolor: Colors.blue,
                 buttonAction: (() {
                   debugPrint("Add Button Pressed");
-                })),
+                }
+                )
+                ) : Avater(image: avatar, statusdisplay: false, displayBorder: true,)
           ),
-          const Positioned(
+           Positioned(
             bottom: 10,
             left: 10,
             child: Text(
-              "Add to Story",
+              labelText != null ? labelText : "N/A",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 16,

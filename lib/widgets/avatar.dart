@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Avater extends StatelessWidget {
-  const Avater({super.key, required this.image, required this.statusdisplay});
+  const Avater({super.key, required this.image, required this.statusdisplay, this.displayBorder = false});
 
   final String image;
   final bool statusdisplay;
+  final bool displayBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,18 @@ class Avater extends StatelessWidget {
       padding: EdgeInsets.all(8),
       child: Stack(
         children: [
-          ClipRRect(
+          Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: displayBorder
+              ? Border.all(
+                color: Colors.blueAccent,
+                width: 3,
+              )
+            : const Border(),
+              
+            ),
+           child: ClipRRect(
             borderRadius: BorderRadius.circular(300),
             child: Image.asset(
               image,
@@ -22,6 +34,8 @@ class Avater extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
+          ),
+          
           if (statusdisplay == true)
             StatusIndicator = Positioned(
               bottom: 0,

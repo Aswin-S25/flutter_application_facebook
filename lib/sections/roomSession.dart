@@ -14,7 +14,7 @@ class RoomSession extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10),
         children: [
           createRoomButton(),
-              Avater(image: musk, statusdisplay: true,),
+              Avater(image: zucker, statusdisplay: true,),
               Avater(image: bill, statusdisplay: true),
               Avater(image: jeff, statusdisplay: true),
               Avater(image: sunder, statusdisplay: true)

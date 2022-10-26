@@ -58,6 +58,7 @@ class Home extends StatelessWidget {
             const RoomSession(),
             thickDivider,
            const StorySession(),
+           thickDivider,
           ],
         ),
       ),
