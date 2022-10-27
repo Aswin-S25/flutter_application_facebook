@@ -10,3 +10,4 @@ String musk_post = "assets/post/musk_post.jpg";
 String bill_post = "assets/post/bill_post.png";
 String sundar_post = "assets/post/sundar_post.png";
 String warren_post = "assets/post/warren_post.png";
+String pichai_post = "assets/post/pichai_post.jpg";

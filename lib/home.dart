@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_facebook/assets.dart';
 import 'package:flutter_application_facebook/sections/StorySession.dart';
 import 'package:flutter_application_facebook/sections/statusSection.dart';
 import 'package:flutter_application_facebook/widgets/headerButtonSession.dart';
+import 'package:flutter_application_facebook/widgets/postCard.dart';
 import './widgets/appBarButton.dart';
 import './sections/statusSection.dart';
 import './widgets/headerButtonSession.dart';
@@ -59,6 +61,9 @@ class Home extends StatelessWidget {
             thickDivider,
            const StorySession(),
            thickDivider,
+            PostCard(avatar: bill, name: "Bill Gate", time: "5h", postImage: pichai_post, showBlueTick: true, shareCount: "100k", commentCount: "20k",likeCount: "1M",),
+            thickDivider,
+            PostCard(avatar: musk, name: "Elon Musk", time: "1m", postImage: musk_post, showBlueTick: true, shareCount: "1k", commentCount: "70", likeCount: "500"),
           ],
         ),
       ),

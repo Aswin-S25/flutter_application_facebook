@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 
 class Avater extends StatelessWidget {
-  const Avater({super.key, required this.image, required this.statusdisplay, this.displayBorder = false});
+  const Avater(
+      {super.key,
+      required this.image,
+      required this.statusdisplay,
+      this.displayBorder = false,
+      this.height=45,
+      this.width=45});
 
   final String image;
   final bool statusdisplay;
   final bool displayBorder;
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -18,24 +26,22 @@ class Avater extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: displayBorder
-              ? Border.all(
-                color: Colors.blueAccent,
-                width: 3,
-              )
-            : const Border(),
-              
+                  ? Border.all(
+                      color: Colors.blueAccent,
+                      width: 3,
+                    )
+                  : const Border(),
             ),
-           child: ClipRRect(
-            borderRadius: BorderRadius.circular(300),
-            child: Image.asset(
-              image,
-              width: 45,
-              height: 45,
-              fit: BoxFit.cover,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(300),
+              child: Image.asset(
+                image,
+                width: width,
+                height: height,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-          ),
-          
           if (statusdisplay == true)
             StatusIndicator = Positioned(
               bottom: 0,
